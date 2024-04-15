@@ -1,3 +1,5 @@
+export type Pretty<$Type> = { [$Key in keyof $Type]: $Type[$Key] } & {};
+
 export type Nullable<$Type> = $Type | null;
 
 export type Optional<$Type> = $Type | undefined;

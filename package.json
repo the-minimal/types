@@ -1,0 +1,43 @@
+{
+  "name": "@the-minimal/types",
+  "type": "module",
+  "version": "0.0.0",
+  "license": "MIT",
+  "author": "Miroslav Vršecký <yamiteru@icloud.com>",
+  "description": "Minimal collection of TypeScript utility types",
+  "types": "index.d.ts",
+  "files": [
+    "index.d.ts"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/the-minimal/types.git",
+    "directory": "src"
+  },
+  "keywords": [
+    "types",
+    "utility-types",
+    "typescript-types",
+    "typescript"
+  ],
+  "homepage": "https://github.com/the-minimal/types",
+  "bugs": {
+    "url": "https://github.com/the-minimal/types/issues"
+  },
+  "scripts": {
+    "prepublishOnly": "bun run check",
+    "release": "release-it",
+    "check": "bunx @biomejs/biome check --apply ./"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.7.0",
+    "@types/bun": "latest",
+    "release-it": "^17.2.0"
+  },
+  "peerDependencies": {
+    "typescript": "5.4.5"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

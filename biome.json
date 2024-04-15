@@ -1,0 +1,11 @@
+{
+	"$schema": "https://biomejs.dev/schemas/1.6.4/schema.json",
+	"linter": {
+		"include": ["index.d.ts"],
+		"ignore": ["node_modules"]
+	},
+	"formatter": {
+		"include": ["index.d.ts"],
+		"ignore": ["node_modules"]
+	}
+}

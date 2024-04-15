@@ -17,3 +17,5 @@ export type Assertion<$Type> = (value: unknown) => asserts value is $Type;
 
 export type InferAssertion<$Assertion extends Assertion<unknown>> =
 	$Assertion extends Assertion<infer $Type> ? $Type : never;
+
+export type Class<$Type> = { new (): $Type };

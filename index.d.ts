@@ -8,7 +8,7 @@ export type Nullish<$Type> = $Type | null | undefined;
 
 export type Either<$Left, $Right> = $Left | $Right;
 
-export type Predicate<$Type> = (value: unknown) => value is $Type;
+export type Predicate = (value: unknown) => boolean;
 
 export type InferPredicate<$Predicate extends Predicate<unknown>> =
 	$Predicate extends Predicate<infer $Type> ? $Type : never;

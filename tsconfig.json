@@ -9,6 +9,6 @@
     "strict": true,
     "skipLibCheck": true
   },
-  "files": ["index.d.ts"],
+  "files": ["index.d.ts", "test.ts"],
   "exclude": ["node_modules"]
 }

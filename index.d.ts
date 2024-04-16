@@ -13,9 +13,9 @@ export type Predicate = (value: unknown) => boolean;
 export type InferPredicate<$Predicate extends Predicate<unknown>> =
 	$Predicate extends Predicate<infer $Type> ? $Type : never;
 
-export type Assertion<$Type> = (value: unknown) => asserts value is $Type;
+export type Check<$Type> = (value: unknown) => $Type;
 
-export type InferAssertion<$Assertion extends Assertion<unknown>> =
-	$Assertion extends Assertion<infer $Type> ? $Type : never;
+export type InferCheck<$Assertion extends Check<unknown>> =
+	$Assertion extends Check<infer $Type> ? $Type : never;
 
 export type Class<$Type> = { new (): $Type };

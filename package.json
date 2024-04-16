@@ -27,12 +27,17 @@
   "scripts": {
     "prepublishOnly": "bun run check",
     "release": "release-it",
+    "test:run": "vitest run",
+    "test:types": "vitest run --typecheck",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
     "check": "bunx @biomejs/biome check --apply ./"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.7.0",
+    "@biomejs/biome": "1.7.0",
     "@types/bun": "latest",
-    "release-it": "^17.2.0"
+    "release-it": "17.2.0",
+    "vitest": "1.5.0"
   },
   "peerDependencies": {
     "typescript": "5.4.5"

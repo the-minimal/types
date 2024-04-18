@@ -10,12 +10,13 @@ export type Either<$Left, $Right> = $Left | $Right;
 
 export type Predicate = (value: unknown) => boolean;
 
-export type InferPredicate<$Predicate extends Predicate<unknown>> =
-	$Predicate extends Predicate<infer $Type> ? $Type : never;
+export type Assertion<$Type> = (value: unknown) => asserts value is $Type;
 
-export type Validation<$Type> = (value: unknown) => $Type;
+export type UnknownAssertion = Assertion<unknown>;
 
-export type InferValidation<$Assertion extends Validation<unknown>> =
-	$Assertion extends Validation<infer $Type> ? $Type : never;
+export type InferAssertion<$Assertion extends Assertion<unknown>> =
+	$Assertion extends Assertion<infer $Type> ? $Type : never;
 
 export type Class<$Type> = { new (): $Type };
+
+export type UnknownClass = Class<unknown>;

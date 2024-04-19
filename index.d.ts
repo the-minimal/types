@@ -20,3 +20,17 @@ export type InferAssertion<$Assertion extends Assertion<unknown>> =
 export type Class<$Type> = { new (): $Type };
 
 export type UnknownClass = Class<unknown>;
+
+export type CustomError<
+	$Type extends string,
+	$Reason extends string,
+	$Value = Optional<unknown>,
+	$Props = Optional<unknown>,
+	$Message = Optional<string>,
+> = {
+	type: $Type;
+	reason: $Reason;
+	value: $Value;
+	props: $Props;
+	message: $Message;
+};

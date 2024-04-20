@@ -34,3 +34,11 @@ export type CustomError<
 	props: $Props;
 	message: $Message;
 };
+
+declare const __brand: unique symbol;
+declare const __props: unique symbol;
+
+export type Brand<$Name, $Props = null> = {
+	[__brand]: $Name;
+	[__props]: $Props;
+};

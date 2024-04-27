@@ -21,24 +21,20 @@ export type Class<$Type> = { new (): $Type };
 
 export type UnknownClass = Class<unknown>;
 
-export type CustomError<
-	$Type extends string,
-	$Reason extends string,
-	$Value = Optional<unknown>,
-	$Props = Optional<unknown>,
-	$Message = Optional<string>,
-> = {
-	type: $Type;
-	reason: $Reason;
-	value: $Value;
-	props: $Props;
-	message: $Message;
+declare const name: unique symbol;
+declare const props: unique symbol;
+
+export type Brand<$Name, $Props = None> = {
+	[name]: $Name;
+	[props]: $Props;
 };
 
-declare const __brand: unique symbol;
-declare const __props: unique symbol;
+export type AnyBrand = Brand<any, any>;
 
-export type Brand<$Name, $Props = null> = {
-	[__brand]: $Name;
-	[__props]: $Props;
+export type Tag<$Name extends string> = {
+	[name]: $Name;
 };
+
+export type AnyTag = Tag<any>;
+
+export type None = Tag<"none">;

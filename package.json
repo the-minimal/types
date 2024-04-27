@@ -35,7 +35,7 @@
     "@biomejs/biome": "1.7.0",
     "@types/bun": "latest",
     "release-it": "17.2.0",
-    "type-testing": "^0.2.0",
+    "type-testing": "0.2.0",
     "vitest": "1.5.0"
   },
   "peerDependencies": {

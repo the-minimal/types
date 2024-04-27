@@ -22,7 +22,7 @@ export type Class<$Type> = { new (): $Type };
 export type UnknownClass = Class<unknown>;
 
 export type Brand<$Name extends string, $Value = None, $Props = None> = {
-	readonly [$$Name in $Name as `__${$$Name}_brand`]: {
+	[$$Name in $Name as `__${$$Name}_brand`]: {
 		value: $Value;
 		props: $Props;
 	};
@@ -31,7 +31,7 @@ export type Brand<$Name extends string, $Value = None, $Props = None> = {
 export type AnyBrand = Brand<any, any, any>;
 
 export type Tag<$Name extends string> = {
-	readonly [$$Name in $Name as `__${$$Name}_brand`]: never;
+	[$$Name in $Name as `__${$$Name}_brand`]: never;
 };
 
 export type AnyTag = Tag<any>;

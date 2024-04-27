@@ -21,7 +21,9 @@ export type Class<$Type> = { new (): $Type };
 
 export type UnknownClass = Class<unknown>;
 
-export type Brand<$Name, $Props = None> = [name: $Name, props: $Props];
+export type Brand<$Name extends string, $Props = None> = {
+	readonly [$$Name in $Name as `__${$$Name}_brand`]: $Props;
+};
 
 export type AnyBrand = Brand<any, any>;
 

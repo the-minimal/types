@@ -27,7 +27,9 @@ export type Brand<$Name extends string, $Props = None> = {
 
 export type AnyBrand = Brand<any, any>;
 
-export type Tag<$Name extends string> = [name: $Name];
+export type Tag<$Name extends string> = {
+	readonly [$$Name in $Name as `__${$$Name}_brand`]: never;
+};
 
 export type AnyTag = Tag<any>;
 

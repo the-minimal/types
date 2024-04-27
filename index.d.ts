@@ -21,19 +21,11 @@ export type Class<$Type> = { new (): $Type };
 
 export type UnknownClass = Class<unknown>;
 
-declare const __name: unique symbol;
-declare const __props: unique symbol;
-
-export type Brand<$Name, $Props = None> = {
-	[__name]: $Name;
-	[__props]: $Props;
-};
+export type Brand<$Name, $Props = None> = [name: $Name, props: $Props];
 
 export type AnyBrand = Brand<any, any>;
 
-export type Tag<$Name extends string> = {
-	[__name]: $Name;
-};
+export type Tag<$Name extends string> = [name: $Name];
 
 export type AnyTag = Tag<any>;
 

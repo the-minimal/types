@@ -2,7 +2,12 @@
 	"$schema": "https://biomejs.dev/schemas/1.6.4/schema.json",
 	"linter": {
 		"include": ["index.d.ts"],
-		"ignore": ["node_modules"]
+		"ignore": ["node_modules"],
+		"rules": {
+			"suspicious": {
+				"noExplicitAny": "off"
+			}
+		}
 	},
 	"formatter": {
 		"include": ["index.d.ts"],
